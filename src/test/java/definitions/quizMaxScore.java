@@ -71,15 +71,15 @@ public class quizMaxScore {
         quizMaxScore.quizScore = setPoints;
         WebElement slider = getDriver().findElement(By.xpath("//*[contains(text(), 'Q1')]/../../..//mat-slider"));
         WebElement actualPoints = getDriver().findElement(By.xpath("//*[contains(text(), 'Q1')]/../../..//h2"));
-        int setPintsInt = Integer.parseInt(setPoints);
-        if (setPintsInt <= 10 && setPintsInt > 5) {
-            while (Integer.parseInt(actualPoints.getText()) < setPintsInt) {
+        int setPointsInt = Integer.parseInt(setPoints);
+        if (setPointsInt <= 10 && setPointsInt > 5) {
+            while (Integer.parseInt(actualPoints.getText()) < setPointsInt) {
                 slider.sendKeys(Keys.ARROW_RIGHT);
             }
         }
-        else if(setPintsInt > 0 && setPintsInt <= 5)
+        else if(setPointsInt > 0 && setPointsInt <= 5)
         {
-            while (Integer.parseInt(actualPoints.getText()) > setPintsInt) {
+            while (Integer.parseInt(actualPoints.getText()) > setPointsInt) {
                 slider.sendKeys(Keys.ARROW_LEFT);
             }
         }
